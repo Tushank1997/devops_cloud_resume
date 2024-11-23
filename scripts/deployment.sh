@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #checkout infra repository
-cd infra
+cd cloud_resume
 
 #initialize terrafrom providers
 terraform init
