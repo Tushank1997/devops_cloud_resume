@@ -1,4 +1,4 @@
-name: AWS Cloud Resume removal workflow
+name: AWS Cloud Resume Removal workflow
 
 on:
   workflow_dispatch:
@@ -21,6 +21,12 @@ jobs:
       - name: install terraform
         uses: hashicorp/setup-terraform@v2.0.3
 
-      - name: Destroy AWS website
-        run: terraform destroy --auto-approve -state=https://s3.us-east-1.amazonaws.com/tfstate-bucket-1.0/terraform-backend.tfstate
+      - name: terraform init
+        run: terraform destroy init
         shell: bash
+      
+      - name: Plan Destroy
+        run: terraform plan -destroy -out=destroy.plan
+
+      - name: Apply Destroy
+        run: terraform apply -auto-approve destroy.plan
