@@ -22,7 +22,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2.0.3
 
       - name: terraform init
-        run: terraform destroy init
+        run: terraform init
         shell: bash
       
       - name: Plan Destroy
