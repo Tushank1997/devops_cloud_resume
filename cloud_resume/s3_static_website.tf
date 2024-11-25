@@ -63,6 +63,7 @@ resource "aws_s3_bucket_policy" "public_bucket_access_policy" {
       ]
     }
   )
+  depends_on = [ aws_s3_bucket_public_access_block.bucket_public_access ]
 }
 
 #Enabling S3 static website hosting
