@@ -5,7 +5,7 @@ on:
 
 jobs:
   destroy-job:
-    name: infra destroy job
+    name: Destroy terraform AWS resources
     runs-on: ubuntu-latest
     steps:
       - name: checkout

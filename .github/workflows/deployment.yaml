@@ -3,9 +3,13 @@ name: AWS Cloud Resume Deployment workflow
 on:
   workflow_dispatch:
 
+  push:
+    branches:
+      - main
+
 jobs:
   deployment-job:
-    name: deployment job
+    name: Deploy terraform AWS resources
     runs-on: ubuntu-latest
     steps:
       - name: checkout
