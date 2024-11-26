@@ -21,14 +21,10 @@ jobs:
       - name: install terraform
         uses: hashicorp/setup-terraform@v2.0.3
 
-      - name: terraform init
+      - name: fetch terraform state file
         run: |
-          cd cloud_resume
-          terraform init
+          aws s3 cp s3://tfstate-bucket-1.0/terraform-backend.tfstate .
         shell: bash
-      
-      - name: Plan Destroy
-        run: terraform plan -destroy -out=destroy.plan
 
-      - name: Apply Destroy
-        run: terraform apply -auto-approve destroy.plan
+      - name: Destroy resources
+        run: terraform destroy --auto-approve
