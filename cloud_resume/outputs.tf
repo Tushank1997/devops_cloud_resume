@@ -16,20 +16,8 @@ output "acm_cert_arn" {
   value = aws_acm_certificate.ssl_certificate.arn
 }
 
-output "id_cache_policy" {
-  value = data.aws_cloudfront_cache_policy.aws_cache_policy.id
-}
-
 output "cloudfront_dist_name" {
   value = aws_cloudfront_distribution.s3_website_distribution.domain_name
-}
-
-output "zone_id" {
-  value = data.aws_route53_zone.hosted_zone.id
-}
-
-output "cert_status" {
-  value = aws_acm_certificate.ssl_certificate.status
 }
 
 output "website_url" {
