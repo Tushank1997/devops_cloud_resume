@@ -25,6 +25,7 @@ jobs:
         run: |
           aws s3 cp s3://tfstate-bucket-1.0/terraform-backend.tfstate .
           ls -l
+          pwd
         shell: bash
 
       - name: Destroy resources
