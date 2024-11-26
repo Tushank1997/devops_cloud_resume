@@ -29,4 +29,6 @@ jobs:
         shell: bash
 
       - name: Destroy resources
-        run: terraform destroy --auto-approve
+        run: |
+          pwd
+          terraform destroy --auto-approve
